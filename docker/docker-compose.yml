@@ -1,0 +1,42 @@
+services:
+  db:
+    image: mysql:8
+    container_name: db
+    environment:
+      MYSQL_DATABASE: ${DB_SCHEMA}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+    ports:
+      - mode: ingress
+        target: 3306
+        published: "3306"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: ../mysql/my.cnf
+        target: /etc/mysql/my.cnf
+
+  gymki-api:
+    container_name: gymki-api
+    environment:
+      ALLOW_ORIGIN: ${ALLOW_ORIGIN}
+      APPLICATION_DISPLAY_NAME: ${APPLICATION_DISPLAY_NAME}
+      CONTEXT_PATH: ${CONTEXT_PATH}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_SCHEMA: ${DB_SCHEMA}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      MIGRATION_MYSQL_USER: ${MIGRATION_MYSQL_USER}
+      MIGRATION_MYSQL_PASSWORD: ${MIGRATION_MYSQL_PASSWORD}
+      SERVER_PORT: ${SERVER_PORT}
+      SQL_QUERY_STRINGS: ${SQL_QUERY_STRINGS}
+    build:
+      context: ..
+    restart: always
+    ports:
+      - mode: ingress
+        target: 8081
+        published: 8081
+        protocol: tcp

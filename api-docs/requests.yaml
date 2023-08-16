@@ -1,0 +1,79 @@
+openapi: 3.1.0
+components:
+  schemas:
+    NewUserRequest:
+      type: object
+      description: |
+        Contains the properties available to create a new user.
+      required:
+        - username
+        - fullName
+        - password
+        - email
+        - active
+      properties:
+        username:
+          type: string
+          description: User's name
+          example: Esthefany
+          maxLength: 100
+          minLength: 1
+        fullName:
+          type: string
+          description: User's full name
+          example: Esthefany Cruz
+          maxLength: 150
+          minLength: 1
+        password:
+          type: string
+          description: User's password
+          example: password123
+          maxLength: 25
+          minLength: 8
+        email:
+          type: string
+          description: User's email
+          example: sen@gmail.com
+          maxLength: 100
+          minLength: 1
+        active:
+          type: boolean
+          description: User's status
+
+    UpdateUserRequest:
+      type: object
+      description: |
+        Contains the allowed properties to update from a user.
+      required:
+        - fullName
+        - email
+        - active
+      properties:
+        fullName:
+          type: string
+          description: User's full name
+          example: Esthefany Cruz
+          maxLength: 150
+          minLength: 1
+        email:
+          type: string
+          description: User's email
+          example: sen@gmail.com
+          maxLength: 100
+          minLength: 1
+        active:
+          type: boolean
+          description: User's status
+
+    UserPermissionRequest:
+      type: object
+      description: |
+        Contains the properties to assign one or more permissions to a existing user.
+      required:
+        - permissionIds
+      properties:
+        permissionIds:
+          type: array
+          items:
+            type: integer
+          description: The IDs of the permissions to assign to the user.

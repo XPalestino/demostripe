@@ -1,0 +1,11 @@
+openapi: 3.1.0
+components:
+  parameters:
+    UserId:
+      name: userId
+      in: path
+      description: The user's ID.
+      required: true
+      schema:
+        type: integer
+        format: int32

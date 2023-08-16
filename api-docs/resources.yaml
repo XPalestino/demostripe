@@ -1,0 +1,54 @@
+openapi: 3.1.0
+components:
+  schemas:
+    UserResource:
+      required:
+        - id
+        - username
+        - fullName
+        - email
+        - active
+      type: object
+      description: User's details
+
+      properties:
+        id:
+          type: integer
+          description: User's ID
+          format: int32
+        username:
+          type: string
+          description: User's name
+          example: pancho
+        fullName:
+          type: string
+          description: User's fullname
+          example: Francisco García
+        email:
+          type: string
+          description: User's email
+          example: pancho@gmail.com
+        active:
+          type: boolean
+          description: User's status
+
+    PermissionResource:
+      required:
+        - id
+        - keycode
+        - name
+      type: object
+      description: Permission's details
+      properties:
+        id:
+          type: integer
+          description: Permission's ID
+          format: int32
+        keycode:
+          type: string
+          description: Permission's keycode
+          example: USER-01
+        name:
+          type: string
+          description: Permission's name
+          example: Ver usuarios

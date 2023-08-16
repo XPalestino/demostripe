@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <users id="1" username="GARELLANO" password="password" full_name="USER TEST" email="test@iwa.com.mx" is_active="1"/>
+    <users id="2" username="TEST" password="password2" full_name="USER TEST 2" email="test2@iwa.com.mx" is_active="0"/>
+</dataset>

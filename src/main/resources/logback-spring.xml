@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="5 minutes">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>gymki %d{dd MM yyyy;HH:mm:ss.SSS, America/Mexico_City} [%thread] %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="JsonConsole" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <fieldNames>
+                <timestamp>timestamp</timestamp>
+                <thread>[ignore]</thread>
+                <version>[ignore]</version>
+                <stackTrace>exception</stackTrace>
+            </fieldNames>
+        </encoder>
+    </appender>
+
+    <springProfile name="local | test">
+        <root level="WARN">
+            <appender-ref ref="CONSOLE" />
+
+        </root>
+    </springProfile>
+
+    <springProfile name="!local &amp; !test">
+        <root level="INFO">
+            <appender-ref ref="JsonConsole" />
+        </root>
+    </springProfile>
+
+    <root level="WARN">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>

@@ -1,0 +1,47 @@
+openapi: 3.1.0
+components:
+  responses:
+    InternalServerError:
+      description: |
+        The request failed to be processed for reasons outside of the control of the client making the 
+         original request.
+    BadRequest:
+      description: |
+        The server was unable to process the request due to an error attributed to the client. This can occur due to various reasons, such as:
+        - Mandatory parameters are missing in the application
+        - One or more parameters in the request are invalid
+        - The format of the request is incorrect
+        - The request contains duplicate or repeated data
+        - The length of the data in the request is wrong
+    Unauthorized:
+      description: Authentication failed or token was not provided.
+    Forbidden:
+      description: |
+        The request was legal, but the server refused to respond, access denied. The server owners have 
+          configured access permissions, it does not have sufficient permissions and is not allowed to 
+          access the resource.
+    NotFound:
+      description: The requested record was not found on the server.
+    Conflict:
+      description: |
+        The request could not be processed due to a conflict in the request. The requested resource
+          is not in the expected state or the result of the request processing creates a conflict with 
+          the resource.
+    Successful:
+      description: Successful server response
+    UserResponse:
+      description: Response containing a list of users.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: './resources.yaml#/components/schemas/UserResource'
+    PermissionsResponse:
+      description: Response containing a list of permissions.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: './resources.yaml#/components/schemas/PermissionResource'

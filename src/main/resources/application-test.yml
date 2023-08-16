@@ -1,0 +1,7 @@
+logging:
+  level:
+    org.hibernate.type.descriptor.sql.BasicBinder: DEBUG
+    org.flywaydb.core.internal.database: DEBUG
+    org.flywaydb.core.internal.command.DbMigrate: TRACE
+    mx.iwa.startertemplate: WARN
+    root: INFO

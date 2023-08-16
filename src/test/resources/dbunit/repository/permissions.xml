@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<permissions id="1" name="VIEW" keycode="ROLE_VIEW"/>
+	<permissions id="2" name="WRITE" keycode="ROLE_WRITE"/>
+</dataset>

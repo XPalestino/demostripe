@@ -1,0 +1,40 @@
+server:
+  servlet:
+    context-path: /${CONTEXT_PATH:gymki-api}
+    application-display-name: ${APPLICATION_DISPLAY_NAME:Gymki API}
+  port: ${SERVER_PORT:8081}
+  allow_origin: ${ALLOW_ORIGIN:http://localhost:4200}
+
+spring:
+  application:
+    name: Gymki
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_SCHEMA:gymki}?${SQL_QUERY_STRINGS:useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true}
+    username: ${DB_USERNAME:iwa}
+    password: ${DB_PASSWORD:demo}
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  flyway:
+    baseline-version: 000
+    baseline-on-migrate: true
+    user: ${MIGRATION_MYSQL_USER:iwa}
+    password: ${MIGRATION_MYSQL_PASSWORD:demo}
+  data:
+    web:
+      pageable:
+        # name of the size query parameter
+        size-parameter: size
+        # name of the page query parameter
+        page-parameter: page
+        # default of the size parameter if no value is given
+        default-page-size: 20
+        # choose if the page parameter starts with 0 or with 1
+        one-indexed-parameters: false
+        # choose the maximum value allowed for the size query parameter (values larger than this will be reduced)
+        max-page-size: 50
+        # define a prefix for the page and size query parameter names
+        prefix:
+        # has a similar effect to the prefix property from above, but it also applies to the sort parameter.
+        # the qualifier-delimiter is used to delimit the prefix from the parameter name.
+        qualifier-delimiter: _
