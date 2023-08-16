@@ -17,8 +17,8 @@ services:
         source: ../mysql/my.cnf
         target: /etc/mysql/my.cnf
 
-  gymki-api:
-    container_name: gymki-api
+  demostripe-api:
+    container_name: demostripe-api
     environment:
       ALLOW_ORIGIN: ${ALLOW_ORIGIN}
       APPLICATION_DISPLAY_NAME: ${APPLICATION_DISPLAY_NAME}

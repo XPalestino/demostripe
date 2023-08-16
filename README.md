@@ -1,4 +1,4 @@
-# Gymki API
+# Demostripe API
 
 ## Requirements
 
@@ -19,7 +19,7 @@
 |:---------------------------|:--------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `DB_HOST`                  | String  | Database host used by application.<br/>**Default value is**: `localhost`                                                                                          |
 | `DB_PORT`                  | Integer | Database port used by application.<br/>**Default value is**: `3306`                                                                                               |
-| `DB_SCHEMA`                | String  | Database schema used by application.<br/>**Default value is**: `gymki`                                                                                            |
+| `DB_SCHEMA`                | String  | Database schema used by application.<br/>**Default value is**: `demostripe`                                                                                       |
 | `DB_USERNAME`              | String  | Database username used by application.<br/>**Default value is**: `iwa`                                                                                            |
 | `DB_PASSWORD`              | String  | Database password used by application.<br/>**Default value is**: `demo`                                                                                           |
 | `MIGRATION_MYSQL_USER`     | String  | Database username used to run the migrations.<br/>**Default value is**: `iwa `                                                                                    |
@@ -158,7 +158,7 @@ Configure your Contrast credentials.
 You can grab these values from Contrast portal (User Settings > Profile) and copy the UUID from the URL this value represents the organization ID.
 
 ```
-➜  gymki git:(develop) contrast auth \
+➜  demostripe git:(develop) contrast auth \
     --api-key <your-api-key> \
     --authorization <your-auth-key> \
     --host https://ce.contrastsecurity.com \

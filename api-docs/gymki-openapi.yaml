@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: GYMKI API
+  title: DEMOSTRIPE API
   description: |
     This project is developed to manage the functionality of the gym.
   contact:

@@ -1,15 +1,15 @@
 server:
   servlet:
-    context-path: /${CONTEXT_PATH:gymki-api}
-    application-display-name: ${APPLICATION_DISPLAY_NAME:Gymki API}
+    context-path: /${CONTEXT_PATH:demostripe-api}
+    application-display-name: ${APPLICATION_DISPLAY_NAME:Demostripe API}
   port: ${SERVER_PORT:8081}
   allow_origin: ${ALLOW_ORIGIN:http://localhost:4200}
 
 spring:
   application:
-    name: Gymki
+    name: demostripe
   datasource:
-    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_SCHEMA:gymki}?${SQL_QUERY_STRINGS:useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true}
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_SCHEMA:demostripe}?${SQL_QUERY_STRINGS:useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true}
     username: ${DB_USERNAME:iwa}
     password: ${DB_PASSWORD:demo}
   jpa:

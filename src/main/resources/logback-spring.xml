@@ -2,7 +2,7 @@
 <configuration scan="true" scanPeriod="5 minutes">
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>gymki %d{dd MM yyyy;HH:mm:ss.SSS, America/Mexico_City} [%thread] %-5level %logger - %msg%n</pattern>
+            <pattern>demostripe %d{dd MM yyyy;HH:mm:ss.SSS, America/Mexico_City} [%thread] %-5level %logger - %msg%n</pattern>
         </encoder>
     </appender>
 
